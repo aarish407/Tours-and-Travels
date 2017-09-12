@@ -1,5 +1,8 @@
 body {
-    padding-top: 90px;
+    padding-top: 0px;
+}
+.container {
+	padding-top: 70px;
 }
 .panel-login {
 	border-color: #ccc;
