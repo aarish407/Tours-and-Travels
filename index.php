@@ -1,3 +1,16 @@
+<?php 
+
+include('php/login.php'); // Includes Login Script
+
+echo "here";
+
+echo $_SESSION['login_user'];
+if(isset($_SESSION['login_user'])){
+  echo "<br /> in here";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,23 +43,31 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">bookMyTrip</a>
+      <a class="navbar-brand" href="index.php">bookMyTrip</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="make-your-trip.html">Make Your Trip</a></li>
         <li><a href="about-us.html">About Us</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
       </ul>
       
+      <?php if(isset($_SESSION['login_user'])) {?>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="php/logout.php">Hi <b> <?php echo $_SESSION['login_user']; ?> </b>Logout</a>
+        </li>
+      </ul>
+
+      <?php } else { ?>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="login.html">Login/Sign Up</a></li>
       </ul>
-
-      
+      <?php } ?>
+            
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

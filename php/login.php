@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'bookmytrip');
 define('DB_USER', 'root'); 
@@ -52,6 +54,11 @@ function Check($connection)
 		{
 			if($status != 0)
 			{
+				$username= $_POST['username'];
+				$_SESSION['login_user']=$username;
+				print_r($_SESSION);
+				session_start();
+				header("location: ../index.php");
 				echo "Successfully logged in";
 			}
 
