@@ -28,18 +28,11 @@ function Check($connection)
 		$blocked= 0;
 
 		while($row = mysqli_fetch_array($query)) {
-			echo "In while"."<br />";
-			echo $row['username']."<br />";
+			echo "In while";
+			echo $row['username'];
 			echo $row['password'];
 			$blocked= $row['blocked'];
 			$status= 1;
-		}
-
-		$check_admin= strcmp($_POST['username'], 'admin');
-		echo "<br />".$check_admin."<br />";
-		if($check_admin == 0)
-		{
-			$status= 0;
 		}
 
 		// blocked = 0 --> Not blocked
@@ -52,7 +45,7 @@ function Check($connection)
 		{
 			if($status != 0)
 			{
-				echo "Successfully logged in";
+				echo "Admin successfully logged in";
 			}
 
 			else
