@@ -1,6 +1,6 @@
 <?php
 
-include('php/login.php');
+include('../php/admin_login.php');
 
 if(!isset($_SESSION['login_user']))
 {
@@ -25,8 +25,8 @@ $db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/forum.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/forum.css">
 </head>
 <body>
 <!-- *****************************************NAVBAR STARTS HERE **************************************************-->
@@ -89,30 +89,50 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
   while($row = mysqli_fetch_array($data))
   {
-    if($row['blocked'] == 0)
-    {
-      ?>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-5">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <strong>  <?php echo $row['username']; ?> </strong> <span class="text-muted">commented 5 days ago</span>
-              </div>
-              <div class="panel-body">
-                 <?php echo $row['content']; ?>
-              </div><!-- /panel-body -->
-            </div><!-- /panel panel-default -->
-          </div><!-- /col-sm-5 -->
-        </div><!-- /row -->
-      </div><!-- /container -->
-      <br><br><br><br><br><br>
+    ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>  <?php echo $row['username']; ?> </strong> &emsp;&emsp; <b> id= <?php echo $row['id']; ?> </b> <span class="text-muted">commented 5 days ago</span>
+            </div>
+            <div class="panel-body">
+               <?php echo $row['content']; ?>
+            </div><!-- /panel-body -->
+          </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+    <br><br><br><br><br><br>
 
-      <?php
-    }
+    <?php
   }
 
 ?>
+
+<div>
+<fieldset style= "width: 30%">
+<table border= "0">
+  <tr>
+    <form method = "POST" action="unblock_content.php">
+    <td>
+      Enter id of post to be unblocked
+    </td>
+    <td>
+      <input type="text" name="id">
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <input id="button" type="submit" name="unblock_content" value="Unblock_content">
+    </td>
+  </tr>
+  </form>
+</table>
+</fieldset>
+</div>
 
 </body>
 </html>
