@@ -43,8 +43,8 @@ if(isset($_SESSION['login_user'])){
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="make-your-trip.html">Make Your Trip</a></li>
-        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="make-your-trip.php">Make Your Trip</a></li>
+        <li><a href="about-us.php">About Us</a></li>
         <li><a href="forum.php">Forum</a></li>
       </ul>
       

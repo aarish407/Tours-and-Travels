@@ -36,10 +36,10 @@ include('php/login.php');
     <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="make-your-trip.html">Make Your Trip</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="forum.php">Forum</a></li>
+        <li><a href="index.php">Home </a></li>
+        <li><a href="make-your-trip.php">Make Your Trip</a></li>
+        <li><a href="about-us.php">About Us</a></li>
+        <li class="active"><a href="forum.php">Forum <span class="sr-only">(current)</span></a></li>
       </ul>
       
       <?php if(isset($_SESSION['login_user'])) {?>
@@ -89,7 +89,7 @@ include('php/login.php');
                             <div class="forum-icon">
                                 <i class="fa fa-shield"></i>
                             </div>
-                            <a href="forum_post.html" class="forum-item-title">General Discussion</a>
+                            <a href="#" class="forum-item-title">General Discussion</a>
                             <div class="forum-sub-title">Talk about your very own travel experience, your favorite places,hotels, talk about enything.
                             </div>
                         </div>

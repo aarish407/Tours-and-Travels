@@ -46,10 +46,10 @@ $db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".
     <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="make-your-trip.html">Make Your Trip</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="forum.php">Forum</a></li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="make-your-trip.php">Make Your Trip   </a></li>
+        <li><a href="about-us.php">About Us</a></li>
+        <li class="active"><a href="forum.php">Forum <span class="sr-only">(current)</span></a></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -79,12 +79,12 @@ while($row = mysqli_fetch_array($data))
     <?php 
 }
 
-?> 
-!-->
+?>  -->
+
 
 <?php
 
-$query= "SELECT username, content FROM forum";
+$query= "SELECT username, content FROM forum ORDER BY id DESC";
 $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
   while($row = mysqli_fetch_array($data))
@@ -104,7 +104,7 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
         </div><!-- /col-sm-5 -->
       </div><!-- /row -->
     </div><!-- /container -->
-    <br><br>
+    <br><br><br><br><br><br>
 
     <?php
   }

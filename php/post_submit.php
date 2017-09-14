@@ -23,7 +23,7 @@ function Record($connection)
 	if($data)
 	{
 		echo "Post submitted.";
-		header('location: ../forum.html');
+		header('location: ../forum.php');
 	}
 }
 

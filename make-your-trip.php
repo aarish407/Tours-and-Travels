@@ -1,3 +1,9 @@
+<?php
+
+  include('php/login.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,15 +35,24 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="make-your-trip.html">Make Your Trip</a></li>
-        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="index.php">Home </a></li>
+        <li class="active"><a href="make-your-trip.php">Make Your Trip <span class="sr-only">(current)</span></a></li>
+        <li><a href="about-us.php">About Us</a></li>
         <li><a href="forum.php">Forum</a></li>
       </ul>
       
+      <?php if(isset($_SESSION['login_user'])) {?>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="php/logout.php">Hi <b> <?php echo $_SESSION['login_user']; ?> </b>Logout</a>
+        </li>
+      </ul>
+
+      <?php } else { ?>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="login.php">Login/Sign Up</a></li>
       </ul>
+      <?php } ?>
 
       
     </div><!-- /.navbar-collapse -->

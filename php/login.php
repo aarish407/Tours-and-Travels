@@ -69,7 +69,7 @@ function Check($connection)
 					header("location: ../forum.php");
 				}
 
-				elseif ($isset($_SESSION['no_login_view'])) 
+				elseif (!isset($_SESSION['no_login_view'])) 
 				{
 					header("location: ../index.php");
 					echo "Successfully logged in";
