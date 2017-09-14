@@ -61,7 +61,7 @@ function Check($connection)
 				$username= $_POST['username'];
 				$_SESSION['login_user']=$username;
 				print_r($_SESSION);
-				session_start();
+				
 
 				if($_SESSION['no_login_view'] == 1)
 				{
