@@ -1,5 +1,9 @@
 <?php
 
+// for $_SESSION['no_login_view']:
+// 	1: forum.php
+// 	2: booking.html
+
 session_start();
 
 define('DB_HOST', 'localhost');
@@ -58,8 +62,18 @@ function Check($connection)
 				$_SESSION['login_user']=$username;
 				print_r($_SESSION);
 				session_start();
-				header("location: ../index.php");
-				echo "Successfully logged in";
+
+				if($_SESSION['no_login_view'] == 1)
+				{
+					echo "In this if";
+					header("location: ../forum.php");
+				}
+
+				elseif ($isset($_SESSION['no_login_view'])) 
+				{
+					header("location: ../index.php");
+					echo "Successfully logged in";
+				}				
 			}
 
 			else

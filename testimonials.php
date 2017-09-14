@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 include('php/login.php');
 
@@ -16,13 +16,6 @@ include('php/login.php');
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
      <link rel="stylesheet" type="text/css" href="css/for.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
 
@@ -46,7 +39,7 @@ include('php/login.php');
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="make-your-trip.html">Make Your Trip</a></li>
         <li><a href="about-us.html">About Us</a></li>
-        <li><a href="testimonials.php">Testimonials</a></li>
+        <li><a href="forum.php">Forum</a></li>
       </ul>
       
       <?php if(isset($_SESSION['login_user'])) {?>
@@ -58,7 +51,7 @@ include('php/login.php');
 
       <?php } else { ?>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.html">Login/Sign Up</a></li>
+        <li><a href="login.php">Login/Sign Up</a></li>
       </ul>
       <?php } ?>
 

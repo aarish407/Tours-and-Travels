@@ -1,20 +1,24 @@
-<?php 
+<?php
 
-include('php/login.php'); // Includes Login Script
+include('php/login.php');
 
-echo "here";
-
-echo $_SESSION['login_user'];
-if(isset($_SESSION['login_user'])){
-  echo "<br /> in here";
+if(!isset($_SESSION['login_user']))
+{
+  $_SESSION['no_login_view']= 1;
+  header("location: login.php");
 }
+
+$connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS) or die("Failed to connect to database:".mysqli_error($connection));
+
+$db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".mysqli_error($connection));
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+<html>
+<head>
+  <title>Comments</title>
+   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -22,9 +26,9 @@ if(isset($_SESSION['login_user'])){
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+</head>
+<body>
 <!-- *****************************************NAVBAR STARTS HERE **************************************************-->
     <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -48,19 +52,13 @@ if(isset($_SESSION['login_user'])){
         <li><a href="forum.php">Forum</a></li>
       </ul>
       
-      <?php if(isset($_SESSION['login_user'])) {?>
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="php/logout.php">Hi <b> <?php echo $_SESSION['login_user']; ?> </b>Logout</a>
         </li>
       </ul>
 
-      <?php } else { ?>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php">Login/Sign Up</a></li>
-      </ul>
-      <?php } ?>
-            
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -68,34 +66,50 @@ if(isset($_SESSION['login_user'])){
 <!-- *****************************************NAVBAR ENDS HERE **************************************************-->
 
 
+<!-- <?php
 
+$query= "SELECT username, content FROM forum";
+$data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
+while($row = mysqli_fetch_array($data))
+{
+    ?>
+    <p><b> <?php echo $row['username']; ?> </b></p><br>
+    <p> <?php echo $row['content']; ?> </p><br><br>
+    <?php 
+}
 
+?> 
+!-->
 
+<?php
 
+$query= "SELECT username, content FROM forum";
+$data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
+  while($row = mysqli_fetch_array($data))
+  {
+    ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>  <?php echo $row['username']; ?> </strong> <span class="text-muted">commented 5 days ago</span>
+            </div>
+            <div class="panel-body">
+               <?php echo $row['content']; ?>
+            </div><!-- /panel-body -->
+          </div><!-- /panel panel-default -->
+        </div><!-- /col-sm-5 -->
+      </div><!-- /row -->
+    </div><!-- /container -->
+    <br><br>
 
+    <?php
+  }
 
+?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>
