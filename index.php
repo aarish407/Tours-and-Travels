@@ -2,12 +2,12 @@
 
 include('php/login.php'); // Includes Login Script
 
-echo "here";
+// echo "here";
 
-echo $_SESSION['login_user'];
-if(isset($_SESSION['login_user'])){
-  echo "<br /> in here";
-}
+// echo $_SESSION['login_user'];
+// if(isset($_SESSION['login_user'])){
+//   echo "<br /> in here";
+// }
 
 ?>
 
@@ -18,7 +18,7 @@ if(isset($_SESSION['login_user'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Home</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

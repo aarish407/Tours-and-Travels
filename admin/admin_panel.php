@@ -22,11 +22,11 @@
            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
         </ul>
         <ul class="sidebar-nav" id="sidebar">
-           <li><a href="modify_content_block.php">Block Users</a></li>
-           <li><a href="modify_content_block.php">Unblock Users</a></li>
+           <li><a href="modify_users_block.php">Block Users</a></li>
+           <li><a href="modify_users_unblock.php">Unblock Users</a></li>
            <ul class="sidebar-nav" id="sidebar">
                 <li><a href="modify_content_block.php">Block Content</a></li>
-                <li><a href="modify_content_block.php">Unblock Content</a></li>
+                <li><a href="modify_content_unblock.php">Unblock Content</a></li>
            </ul>
           <li><a>Add checklist</a></li>
           <li><a>Delete checklist</a></li>
