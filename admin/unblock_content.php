@@ -1,14 +1,20 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'bookmytrip');
-define('DB_USER', 'root'); /*xampp default username*/
-define('DB_PASS', ''); /*xampp default password*/
+// for $_SESSION['block_status']:
+// 1. user Successfully blocked
+// 2. user is already blocked
+// 3. username does not exist (block)
+// 4. user Successfully unblocked
+// 5. user is already unblocked
+// 6. username does not exist (unblock)
+// 7. content successfully blocked
+// 8. content already blocked
+// 9. no such id present (block)
+// 10. content successfully unblocked
+// 11. content already unblocked
+// 12. no such id present (unblock)
 
-$connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS) or die("Failed to connect to database:".mysqli_error($connection));
-/*Sequence of connect matters*/
-
-$db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".mysqli_error($connection));
+include('../php/admin_login.php');	
 
 if(isset($_POST['unblock_content']))
 {
@@ -37,19 +43,21 @@ function Unblock_content($connection){
 			{
 				$query = "UPDATE forum SET blocked= 0 WHERE id= '$_POST[id]'";
 				$data = mysqli_query($connection, $query)  or die(mysqli_error($connection));
-
-				echo "  Successful";
+				$_SESSION['block_status']= 10;
+				header("location: modify_content_unblock.php");
 			}
 
 			else
 			{
-				echo "  This post is not blocked.";
+				$_SESSION['block_status']= 11;
+				header("location: modify_content_unblock.php");
 			}
 		}
 
 		else
 		{
-			echo "  Post does not exist.";
+			$_SESSION['block_status']= 12;
+			header("location: modify_content_unblock.php");
 		}
 	}
 }

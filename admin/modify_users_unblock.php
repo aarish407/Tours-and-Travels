@@ -41,7 +41,7 @@
         <div class="page-content inset">
             <div class="row">
               <div class="col-md-12">
-              <p class="well lead">Block users</p>
+              <p class="well lead">Unblock users</p>
               <div class="container">
                 <div class="row"> <!-- div da esquerda -->
                     <!-- Text input CNPJ e Razao Social-->
@@ -97,7 +97,7 @@
                             
                             <div class="row">
                                 <div class="col-xs-12 col-md-12 form-group">
-                                    <button class="btn btn-primary pull-right" type="submit" name="unblock" value="Unblocked">Block</button>
+                                    <button class="btn btn-primary pull-right" type="submit" name="unblock" value="Unblocked">Unblock</button>
                                     <!--<button class="btn btn-primary pull-right" type="submit">Enviar</button>-->
                                 </div>
                             </div>
@@ -150,7 +150,7 @@
         <?php
     }
 
-    elseif($_SESSION['block_status'] == 3)
+    elseif($_SESSION['block_status'] == 6)
     {
         ?>
 

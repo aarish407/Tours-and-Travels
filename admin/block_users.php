@@ -3,9 +3,16 @@
 // for $_SESSION['block_status']:
 // 1. user Successfully blocked
 // 2. user is already blocked
-// 3. username does not exist
+// 3. username does not exist (block)
 // 4. user Successfully unblocked
 // 5. user is already unblocked
+// 6. username does not exist (unblock)
+// 7. content successfully blocked
+// 8. content already blocked
+// 9. no such id present (block)
+// 10. content successfully unblocked
+// 11. content already unblocked
+// 12. no such id present (unblock)
 
 include('../php/admin_login.php');	
 
