@@ -43,13 +43,13 @@ function Block_content($connection){
 
 			else
 			{
-				echo "  This user is already blocked.";
+				echo "  This post is already blocked.";
 			}
 		}
 
 		else
 		{
-			echo "  Username does not exist.";
+			echo "  Post does not exist.";
 		}
 	}
 }

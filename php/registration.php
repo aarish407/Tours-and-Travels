@@ -1,11 +1,24 @@
 <?php
 
+// for $_SESSION['no_login_view']:
+// 	1: forum.php
+// 	2: booking.html
+
+// for $_SESSION['incorrect_login']:
+// 1: incorrect username or password
+// 2: blocked user
+// 3: user already exists (exclusively for registration)
+// 4: password and confirm password do not match 
+
+
+session_start();
+
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'bookmytrip');
 define('DB_USER', 'root'); 
 define('DB_PASS', '');
 
-// echo "reached phop";
+echo "reached registration.php";
 
 $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS) or die("Failed to connect to database:".mysqli_error($connection));
 
@@ -16,7 +29,7 @@ $var= $_POST['register-submit'];
 echo $var;
 if(isset($var))
 {
-	// echo "Signed Up";
+	echo "in the first if";
 
 	Signup($connection);
 }
@@ -27,21 +40,37 @@ function Signup($connection){
 	// echo " In Signup function";
 	if(!empty($_POST['username']))
 	{
-		// echo "yo";
+		$pass= $_POST['password'];
+		$cpass= $_POST['confirm-password'];
+		$result= strcmp($_POST['password'], $_POST['confirm-password']);
 
-		$query = mysqli_query($connection, "SELECT * FROM customer WHERE username = '$_POST[username]' AND password = '$_POST[password]' ") or die(mysqli_error($connection));
+		echo $pass."<br />".$cpass."<br />".$result."<br />";
 
-		// echo "in big if";
-
-		if(!$row = mysqli_fetch_array($query) or die(mysqli_error($connection)))
+		if($result != 0)
 		{
-			// echo "in if";
-			NewUser($connection);
+			$_SESSION['incorrect_login']= 4;
+			header("location: ../login.php");
 		}
 
-		else{
-			echo "Already registered.";
-		}
+		else
+		{
+			$query = mysqli_query($connection, "SELECT * FROM customer WHERE username = '$_POST[username]' AND password = '$_POST[password]' ") or die(mysqli_error($connection));
+
+			// echo "in big if";
+
+			if(!$row = mysqli_fetch_array($query)) // or die(mysqli_error($connection)))
+			{
+				echo "in the if before new user";
+				NewUser($connection);
+			}
+
+			else{
+				echo "in this else";
+				$_SESSION['incorrect_login']= 3;
+				header("location: ../login.php");
+				echo "Already registered.";
+			}
+		}		
 	}
 }
 
@@ -58,7 +87,19 @@ echo "In NewUser function";
 	$data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
 	if($data){
-		echo "Your registration is Complete.";
+		$username= $_POST['username'];
+		$_SESSION['login_user']= $username;
+
+		if($_SESSION['no_login_view'] == 1)
+		{
+			header("location: ../forum.php");
+		}
+
+		elseif(!isset($_SESSION['no_login_view']))
+		{
+			header("location: ../index.php");
+		}
+		// echo "Your registration is Complete.";
 	}
 
 	// $print= mysqli_query($connection, "SELECT * FROM users");

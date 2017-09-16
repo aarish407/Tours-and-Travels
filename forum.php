@@ -94,8 +94,8 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
       ?>
       <div class="container">
         <div class="row">
-          <div class="col-sm-5">
-            <div class="panel panel-default">
+          <div class="col-md-12">
+            <div class="panel panel-default" style="width: 60%; margin-left: 50px; margin-right: 50px; word-wrap: break-word;">
               <div class="panel-heading">
                 <strong>  <?php echo $row['username']; ?> </strong> <span class="text-muted">commented 5 days ago</span>
               </div>
@@ -103,7 +103,7 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
                  <?php echo $row['content']; ?>
               </div><!-- /panel-body -->
             </div><!-- /panel panel-default -->
-          </div><!-- /col-sm-5 -->
+          </div><!--/col-sm-5-->
         </div><!-- /row -->
       </div><!-- /container -->
       <br><br><br><br><br><br>

@@ -50,6 +50,8 @@
 
 	include('php/login.php');
 
+	// error_reporting(E_ALL ^ E_NOTICE);
+
 	echo $_SESSION['no_login_view'];
 
 	if(isset($_SESSION['no_login_view']))
@@ -62,6 +64,81 @@
 	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 	          <h4>You must be logged in!</h4>
 	          <p>Please login in order to view this page.</p>
+	        </div>
+	     </div>
+	    </div>
+		
+		<?php
+	}
+
+	if($_SESSION['incorrect_login'] == 1)
+	{
+		session_destroy();
+
+		?>
+
+		<div class="container" style="padding-top: 20px;">
+	      <div class="row">	        
+	        <div class="alert alert-danger fade in">
+	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	          <h4>You have entered the wrong username or passord!</h4>
+	          <!-- <p>Please login in order to view this page.</p> -->
+	        </div>
+	     </div>
+	    </div>
+		
+		<?php
+	}
+
+	elseif($_SESSION['incorrect_login'] == 2)
+	{
+		session_destroy();
+		?>
+
+		<div class="container" style="padding-top: 20px;">
+	      <div class="row">	        
+	        <div class="alert alert-danger fade in">
+	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	          <h4>Login unsuccessful because you have been blocked.</h4>
+	          <!-- <p>Please login in order to view this page.</p> -->
+	        </div>
+	     </div>
+	    </div>
+		
+		<?php
+	}
+
+	elseif($_SESSION['incorrect_login'] == 3)
+	{
+		session_destroy();
+
+		?>
+
+		<div class="container" style="padding-top: 20px;">
+	      <div class="row">	        
+	        <div class="alert alert-danger fade in">
+	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	          <h4>This username already exists.</h4>
+	          <!-- <p>Please login in order to view this page.</p> -->
+	        </div>
+	     </div>
+	    </div>
+		
+		<?php
+	}
+
+	elseif($_SESSION['incorrect_login'] == 4)
+	{
+		session_destroy();
+
+		?>
+
+		<div class="container" style="padding-top: 20px;">
+	      <div class="row">	        
+	        <div class="alert alert-danger fade in">
+	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	          <h4>The passwords entered do not match. </h4>
+	          <!-- <p>Please login in order to view this page.</p> -->
 	        </div>
 	     </div>
 	    </div>
@@ -118,7 +195,7 @@
 									</div>
 								</form>
 
-								<form id="register-form" action="php/resgistration.php" method="post" role="form" style="display: none;">
+								<form id="register-form" action="php/registration.php" method="post" role="form" style="display: none;">
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="">
 									</div>

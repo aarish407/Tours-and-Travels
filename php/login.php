@@ -4,6 +4,12 @@
 // 	1: forum.php
 // 	2: booking.html
 
+// for $_SESSION['incorrect_login']:
+// 1: incorrect username or password
+// 2: blocked user
+// 3: user already exists (exclusively for registration)
+
+
 session_start();
 
 define('DB_HOST', 'localhost');
@@ -78,12 +84,16 @@ function Check($connection)
 
 			else
 			{
+				$_SESSION['incorrect_login']= 1;
+				header("location: ../login.php");
 				echo "Entered username or password is wrong";
 			}
 		}
 
 		else
 		{
+			$_SESSION['incorrect_login']= 2;
+			header("location: ../login.php");
 			echo "Cannot login because you have been blocked.";
 		}
 	}

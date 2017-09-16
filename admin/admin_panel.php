@@ -13,7 +13,7 @@
   </head>
   <body>
 
-<!-- *****************************************NAVBAR STARTS HERE **************************************************-->
+<!-- *****************************************ADMIN NAVBAR STARTS HERE **************************************************-->
     <div id="wrapper" class="active">  
     <!-- Sidebar -->
             <!-- Sidebar -->
@@ -22,15 +22,18 @@
            <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
         </ul>
         <ul class="sidebar-nav" id="sidebar">
-          <li><a>Manage Users</a></li>
+           <li><a href="modify_content_block.php">Block Users</a></li>
+           <li><a href="modify_content_block.php">Unblock Users</a></li>
            <ul class="sidebar-nav" id="sidebar">
-                <li><a>Manage Content</a></li>
-                <li><a>Update Cities</a></li>
+                <li><a href="modify_content_block.php">Block Content</a></li>
+                <li><a href="modify_content_block.php">Unblock Content</a></li>
            </ul>
-          <li><a>Consulta</a></li>
-          <li><a>Relatorio</a></li>
+          <li><a>Add checklist</a></li>
+          <li><a>Delete checklist</a></li>
         </ul>
       </div>
+
+<!-- *****************************************ADMIN NAVBAR ENDS HERE **************************************************-->     
           
       <!-- Page content -->
       <div id="page-content-wrapper">
@@ -124,11 +127,11 @@
                     </div> <!-- fim div da direita -->
                 </div> <!-- fim div da esquerda -->
             </div>
-              <p class="well lead">An Experiment using the sidebar (<a href="http://animeshmanglik.name">animeshmanglik.name</a>)</p> 
+               
             </div>
           </div>
         </div>
-     --> --></div>
+    </div>
       
 </div>
 <!-- *****************************************NAVBAR ENDS HERE **************************************************-->
