@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/login.css">
+
   </head>
   <body> 
 
@@ -30,7 +31,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="index.php">Home </a></li>
         <li><a href="make-your-trip.html">Make Your Trip</a></li>
         <li><a href="about-us.html">About Us</a></li>
         <li><a href="forum.php">Forum</a></li>
@@ -45,6 +46,30 @@
 </nav>
 <!-- *****************************************NAVBAR ENDS HERE **************************************************-->  
 
+<?php
+
+	include('php/admin_login.php');
+
+	if($_SESSION['incorrect_login'] == 1)
+	{
+		session_destroy();
+
+		?>
+
+		<div class="container" style="padding-top: 20px;">
+	      <div class="row">	        
+	        <div class="alert alert-danger fade in">
+	          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	          <h4>You have entered the wrong username or passord!</h4>
+	          <!-- <p>Please login in order to view this page.</p> -->
+	        </div>
+	     </div>
+	    </div>
+		
+		<?php
+	}
+
+?>
 
     <div class="container">
     	<div class="row">

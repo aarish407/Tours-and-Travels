@@ -43,18 +43,15 @@ function Check($connection)
 			{
 				$_SESSION['login_user']="admin";
 				echo "Admin successfully logged in";
-				header("location: ../admin/admin_panel.php");
+				header("location: ../admin/modify_users_block.php");
 			}
 
 			else
 			{
+				$_SESSION['incorrect_login']= 1;
+				header("location: ../admin_login.php");
 				echo "Entered username or password is wrong";
 			}
-		}
-
-		else
-		{
-			echo "Cannot login because you have been blocked.";
 		}
 	}
 }

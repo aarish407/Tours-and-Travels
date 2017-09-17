@@ -17,7 +17,7 @@ $db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Comments</title>
+  <title>Forum</title>
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,6 +80,14 @@ while($row = mysqli_fetch_array($data))
 }
 
 ?>  -->
+
+<div class="col-xs-12 col-md-12 form-group">
+  <form action= "testimonials.php">
+    <button class="btn btn-primary pull-right" type="submit" name= "Forum Post">Post on the Forum!</button>
+    <!--<button class="btn btn-primary pull-right" type="submit">Enviar</button>-->
+  </form>
+</div>
+
 
 
 <?php

@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Comments</title>
+  <title>Block Content</title>
    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@ session_start();
             <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Admin<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
         </ul>
         <ul class="sidebar-nav" id="sidebar">
            <li><a href="modify_users_block.php">Block Users</a></li>
@@ -37,6 +37,7 @@ session_start();
            </ul>
           <li><a>Add checklist</a></li>
           <li><a>Delete checklist</a></li>
+          <li><a href="../php/logout.php">Logout</a></li>
         </ul>
       </div>
 

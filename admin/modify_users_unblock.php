@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Admin Panel</title>
+    <title>Unblock Users</title>
 
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
             <!-- Sidebar -->
     <div id="sidebar-wrapper">
         <ul id="sidebar_menu" class="sidebar-nav">
-           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Admin <span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
         </ul>
         <ul class="sidebar-nav" id="sidebar">
            <li><a href="modify_users_block.php">Block Users</a></li>
@@ -30,6 +30,7 @@
            </ul>
           <li><a>Add checklist</a></li>
           <li><a>Delete checklist</a></li>
+          <li><a href="../php/logout.php">Logout</a></li>
         </ul>
       </div>
 
