@@ -1,6 +1,8 @@
-<!-- <?php
+<?php
+
+session_start();
+
 $q = intval($_GET['q']);
-$cost = 0;
 
 $con = mysqli_connect('localhost','root','');
 if (!$con) {
@@ -9,15 +11,23 @@ if (!$con) {
 
 mysqli_select_db($con, "bookmytrip");
 
-$result = mysqli_query($con,"SELECT * FROM states WHERE id = '".$q."'");
+$query = mysqli_query($con, "UPDATE cost SET temp = $q WHERE id = 1");
 
-while($row = mysqli_fetch_array($result)) {
-     $cost += $row['cost'];
-     echo $cost;
-}
+$_SESSION['cost'] = 0;
 
-$query = mysqli_query($con, "UPDATE cost SET cost = $cost WHERE id = 1");
+echo $_SESSION['cost'];
 
 mysqli_close($con);
 ?>
- -->
+
+
+<!-- 
+Steps: 
+
+1. Select destination state
+2. Select source state
+3. Select city
+4. Select mode of transport(bus/train/plane)
+5. Select hotel stars
+
+-->

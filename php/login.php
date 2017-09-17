@@ -65,7 +65,7 @@ function Check($connection)
 			if($status != 0)
 			{
 				$username= $_POST['username'];
-				$_SESSION['login_user']=$username;
+				$_SESSION['login_user'] = $username;
 				print_r($_SESSION);
 				
 
