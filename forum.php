@@ -25,7 +25,7 @@ $db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".
     <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/forum.css">
 </head>
 <body>
@@ -122,5 +122,20 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
 ?>
 
+<br><br><br><br><br><br>
+
+
+<hr>
+<div id="footer">
+  <footer><h4>
+    <?php 
+
+    include 'footer.php'; 
+
+    ?>
+    </h4>
+  </footer>
+  
+</div>
 </body>
 </html>

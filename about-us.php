@@ -2,6 +2,8 @@
 
   include('php/login.php');
 
+  error_reporting(E_ALL ^ E_NOTICE);
+
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +16,9 @@
     <title>About us</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
@@ -75,30 +77,33 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-<div class="item active">
-        <img src="img/stars.jpeg" alt="stars" style="width:100%;">
+    <div class="item active">
+        <img src="img/boat.jpg" alt="rivers" style="height: 80%; width:100%;">
+        <div class="carousel-caption">
+          <h3><i>"Off all the books in the world,the best stories are found between the pages of a passport!"</i></h3>
+          <p>"</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="img/stars.jpeg" alt="stars" style="height: 80%; width:100%;">
         <div class="carousel-caption">
           <h1 style="text-align: center;">Plan your Next Getaway Now!</h1>
           <p><i>"Travelling..... It leaves you speechless, then turns you into a story teller!"</i></p>
         </div>
       </div>
+
       <div class="item ">
-        <img src="img/tour1.jpeg" alt="lakes" style="width:100%;">
+        <img src="img/mountains.png" alt="lakes" style="height: 80%; width:100%;">
         <div class="carousel-caption">
           <h3><i>"When life gives you mountains...,Put on your boots and hike!</i></h3>
           <p></p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="img/boat.jpg" alt="rivers" style="width:100%;">
-        <div class="carousel-caption">
-          <h3><i>"Off all the books in the world,the best stories are found between the pages of a passport!"</i></h3>
-          <p>"</p>
         </div>
       </div>
     
@@ -111,9 +116,9 @@
       </div>-->
 
       <div class="item">
-        <img src="img/tour2.jpeg" alt="Beaches" style="width:100%;">
-        <div class="carousel-caption">
-          <h3><font color="black">Beaches</font></h3>
+        <img src="img/tour2.jpeg" alt="Beaches" style="height: 80%; width:100%;">
+        <div class="carousel-caption" style="">
+          <h3><font color="black">Come get your dose of vitamin SEA</font></h3>
           <p></p>
         </div>
       </div>
@@ -142,9 +147,21 @@
 </div>
 <!--<div align="left">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HYeN4RHhLAI?rel=0&amp;showinfo=0&amp;start=9" frameborder="0" allowfullscreen></iframe></div>-->
+<br><br><br><br><br><br>
 
 
+<hr>
+<div id="footer">
+  <footer><h4>
+    <?php 
 
+    include 'footer.php'; 
+
+    ?>
+    </h4>
+  </footer>
+  
+</div>
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -152,3 +169,4 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+

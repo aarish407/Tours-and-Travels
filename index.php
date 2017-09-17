@@ -21,7 +21,7 @@ include('php/login.php'); // Includes Login Script
     <title>Home</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
   </head>
   <body>
 
@@ -68,25 +68,19 @@ include('php/login.php'); // Includes Login Script
 <!-- *****************************************NAVBAR ENDS HERE **************************************************-->
 
 
+<br><br><br><br><br><br>
 
+  <hr>
+<div id="footer">
+    <footer><h4>
+      <?php 
 
+      include 'footer.php'; 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      ?>
+      </h4>
+    </footer> 
+</div>
 
 
 

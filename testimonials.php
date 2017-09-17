@@ -14,7 +14,7 @@ include('php/login.php');
     <title>Post on forum</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
      <link rel="stylesheet" type="text/css" href="css/for.css">
   </head>
   <body>
@@ -122,12 +122,21 @@ include('php/login.php');
 
 
 
+<br><br><br><br><br><br>
 
 
+<hr>
+<div id="footer">
+  <footer><h4>
+    <?php 
 
+    include 'footer.php'; 
 
-
-
+    ?>
+    </h4>
+  </footer>
+  
+</div>
 
 
 

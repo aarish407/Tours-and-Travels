@@ -8,7 +8,7 @@
     <title>Log In</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/login.css">
 
   </head>
@@ -32,8 +32,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home </a></li>
-        <li><a href="make-your-trip.html">Make Your Trip</a></li>
-        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="make-your-trip.php">Make Your Trip</a></li>
+        <li><a href="about-us.php">About Us</a></li>
         <li><a href="forum.php">Forum</a></li>
       </ul>
       
@@ -229,6 +229,21 @@
 			</div>
 		</div>
 	</div>
+<br><br><br><br><br><br>
+
+
+<hr>
+<div id="footer">
+  <footer><h4>
+    <?php 
+
+    include 'footer.php'; 
+
+    ?>
+    </h4>
+  </footer>
+  
+</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
