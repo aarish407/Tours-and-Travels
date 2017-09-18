@@ -63,9 +63,157 @@ include('php/login.php'); // Includes Login Script
             
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
+<!--</nav>-->
 
 <!-- *****************************************NAVBAR ENDS HERE **************************************************-->
+
+<!-- Carousel
+************************************************************** -->
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/2.jpeg" style="width:100%; height: 70%;" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <p><font size="14" color="#990000">The Perfect Place To Plan Your Getaway</font></p>
+          <p style="text-align: center;"><font size="12" align="center">bookMyTrip!</font></p>
+          <p></p>
+          <!--<p><a class="btn btn-lg btn-primary" href="about-us.php">More about us!</a>-->
+        </p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/lel.jpeg" style="width:100%;height:70%;" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          
+          <p><font size="14">Travel With Us</font></p>
+          <p><font size="10">For the Best Deal!</font></p>
+          
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/mount2.jpeg" style="width:100%;height:70%;" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          
+          <p><font size="12" color="#922345"><b>Capture The Moment</b></font></p>
+          
+        </div>
+      </div>
+    </div>
+<div class="item">
+      <img src="img/trip7.jpeg" style="width:100%;height:70%;" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          
+          <p><font size="14" color="#4040a1"><i>Experience</i></font></p>
+          <p><font size="7" color="#4040a1">a holiday like never before!</font></p>
+          
+        </div>
+      </div>
+    </div>
+<div class="item">
+      <img src="img/beach2.jpeg" style="width:100%;height:70%;" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+         
+          <p><font size="7" color="#dac292"><i>"To Travel Is To Live...."</i></font></p>
+         
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/trip5.jpeg" style="width:100%;height:70%;" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+         
+          <p><font size="7" color="#990000"><i>Adventure Awaits!!</i></font></p>
+          
+        </div>
+      </div>
+    </div>
+
+    
+    
+
+  </div>
+  <!-- Controls  to move -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+</nav>
+<!-- /.carousel -->
+
+
+<!-- Circle wala stuff
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="img/trip4.jpeg" style="width:140px;height:140px;">
+      <h2>About us!</h2>
+      <p>Read more about us here</p>
+      <p><a class="btn btn-default" href="about-us.php">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="img/trip.jpeg" style="width: :120px;height:120px;">
+      <h2>Make your Trip!</h2>
+      <p>Get a cost estimate before you could book and plan your trip accordingly!</p>
+      <p><a class="btn btn-default" href="make-your-trip.php">View details »</a></p>
+    </div>
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="img/trip2.jpeg" style="width:140px;height:140px;">
+      <h2>Post your experience Here!</h2>
+      <p>Post and read various posts on travel.</p>
+      <p><a class="btn btn-default" href="forum.php">View details »</a></p>
+    </div>
+  </div><!-- /.row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br><br><br><br><br><br>
