@@ -16,6 +16,8 @@
 
 include('../php/admin_login.php');
 
+error_reporting(E_ALL ^ E_NOTICE);
+
 if(isset($_POST['unblock']))
 {
 	Unblock_user($connection);

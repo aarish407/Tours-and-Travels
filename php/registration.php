@@ -10,6 +10,7 @@
 // 3: user already exists (exclusively for registration)
 // 4: password and confirm password do not match 
 
+error_reporting(E_ALL ^ E_NOTICE);
 
 session_start();
 

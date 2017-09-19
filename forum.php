@@ -2,6 +2,9 @@
 
 include('php/login.php');
 
+error_reporting(E_ALL ^ E_NOTICE);
+
+
 if(!isset($_SESSION['login_user']))
 {
   $_SESSION['no_login_view']= 1;
@@ -47,7 +50,7 @@ $db= mysqli_select_db($connection, DB_NAME) or die("Failed to connect to MySql".
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li><a href="make-your-trip.php">Make Your Trip   </a></li>
+        <li><a href="make_my_trip.php">Make Your Trip   </a></li>
         <li><a href="about-us.php">About Us</a></li>
         <li class="active"><a href="forum.php">Forum <span class="sr-only">(current)</span></a></li>
       </ul>
@@ -105,7 +108,7 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
           <div class="col-md-12">
             <div class="panel panel-default" style="width: 60%; margin-left: 50px; margin-right: 50px; word-wrap: break-word;">
               <div class="panel-heading">
-                <strong>  <?php echo $row['username']; ?> </strong> <span class="text-muted">commented 5 days ago</span>
+                <strong>  <?php echo $row['username']; ?> </strong> 
               </div>
               <div class="panel-body">
                  <?php echo $row['content']; ?>

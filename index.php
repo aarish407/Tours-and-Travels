@@ -2,6 +2,8 @@
 
 include('php/login.php'); // Includes Login Script
 
+error_reporting(E_ALL ^ E_NOTICE);
+
 // echo "here";
 
 // echo $_SESSION['login_user'];
@@ -43,7 +45,7 @@ include('php/login.php'); // Includes Login Script
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="make-your-trip.php">Make Your Trip</a></li>
+        <li><a href="make_my_trip.php">Make Your Trip</a></li>
         <li><a href="about-us.php">About Us</a></li>
         <li><a href="forum.php">Forum</a></li>
       </ul>
@@ -188,30 +190,6 @@ include('php/login.php'); // Includes Login Script
       <p><a class="btn btn-default" href="forum.php">View details »</a></p>
     </div>
   </div><!-- /.row -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

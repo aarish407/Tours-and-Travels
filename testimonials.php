@@ -1,6 +1,8 @@
  <?php
 
 include('php/login.php');
+error_reporting(E_ALL ^ E_NOTICE);
+
 
 ?>
 
@@ -37,7 +39,7 @@ include('php/login.php');
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home </a></li>
-        <li><a href="make-your-trip.php">Make Your Trip</a></li>
+        <li><a href="make_my_trip.php">Make Your Trip</a></li>
         <li><a href="about-us.php">About Us</a></li>
         <li class="active"><a href="forum.php">Forum <span class="sr-only">(current)</span></a></li>
       </ul>
@@ -73,29 +75,31 @@ include('php/login.php');
                         <i class="fa fa-globe text-navy mid-icon"></i>
                     </div>
                     <h2>Testimonials!</h2>
-                    <span>Feel free to choose whatever you're interested in.</span>
+                    <!-- <span>Feel free to choose whatever you're interested in.</span> -->
                 </div>
             </div>
 
             <div class="ibox-content forum-container">
 
-                <div class="forum-title">
+                <!-- <div class="forum-title">
                  <h3>General subjects</h3>
-                </div>
+                </div> -->
 
                 <div class="forum-item active">
                     <div class="row">
                         <div class="col-md-9">
                             <div class="forum-icon">
                                 <i class="fa fa-shield"></i>
-                            </div>
-                            <a href="#" class="forum-item-title">General Discussion</a>
-                            <div class="forum-sub-title">Talk about your very own travel experience, your favorite places,hotels, talk about enything.
+                            </div><br><br>
+                            <!-- <a href="#" class="forum-item-title">General Discussion</a> -->
+                            <div class="forum-sub-title">Talk about your very own travel experience, your favorite places,hotels, talk about enything.<br><br>
                             </div>
                         </div>
                         <div class="col-sm-4 well">
                             <form accept-charset="UTF-8" action="php/post_submit.php" method="POST">
-                                <textarea class="form-control" id="text" name="text" placeholder="Type in your message" rows="5"></textarea>
+                                <textarea class="form-control" id="text" name="text" placeholder="Type in your testimonial!" rows="5"></textarea>
+
+                                <br>
                                 <h6 class="pull-right" id="count_message"></h6>
                                 <button class="btn btn-info" name="post_submit" type="submit">Post </button>
                             </form>

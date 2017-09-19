@@ -16,6 +16,9 @@
 
 include('../php/admin_login.php');	
 
+error_reporting(E_ALL ^ E_NOTICE);
+
+
 if(isset($_POST['block_content']))
 {
 	Block_content($connection);

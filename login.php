@@ -32,7 +32,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home </a></li>
-        <li><a href="make-your-trip.php">Make Your Trip</a></li>
+        <li><a href="make_my_trip.php">Make Your Trip</a></li>
         <li><a href="about-us.php">About Us</a></li>
         <li><a href="forum.php">Forum</a></li>
       </ul>
@@ -50,7 +50,7 @@
 
 	include('php/login.php');
 
-	// error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(E_ALL ^ E_NOTICE);
 
 	echo $_SESSION['no_login_view'];
 

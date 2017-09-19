@@ -2,6 +2,7 @@
 
 session_start();
 
+error_reporting(E_ALL ^ E_NOTICE);
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +72,7 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
               ?>
               <div class="alert alert-success fade in">
                 <div class="panel-heading">
-                  <strong>  <?php echo $row['username']; ?> </strong> &emsp;&emsp; <b> ID= <?php echo $row['id']; ?> </b> <span class="text-muted">commented 5 days ago</span>
+                  <strong>  <?php echo $row['username']; ?> </strong> &emsp;&emsp; <b> ID= <?php echo $row['id']; ?> </b> <span class="text-muted">&emsp;Timestamp: <?php echo $row['record_time'] ?></span>
                 </div>
                 <div class="panel-body">
                    <?php echo $row['content']; ?>
@@ -86,7 +87,7 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
               ?>
               <div class="alert alert-danger fade in">
                 <div class="panel-heading">
-                  <strong>  <?php echo $row['username']; ?> </strong> &emsp;&emsp; <b> ID= <?php echo $row['id']; ?> </b> <span class="text-muted">commented 5 days ago</span>
+                  <strong>  <?php echo $row['username']; ?> </strong> &emsp;&emsp; <b> ID= <?php echo $row['id']; ?> </b> <span class="text-muted">&emsp;Timestamp: <?php echo $row['record_time'] ?></span>
                 </div>
                 <div class="panel-body">
                    <?php echo $row['content']; ?>
@@ -205,6 +206,11 @@ $data= mysqli_query($connection, $query) or die(mysqli_error($connection));
 
    ?>   
     </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL ^ E_NOTICE);
+
 // for $_SESSION['no_login_view']:
 // 	1: forum.php
 // 	2: booking.html
